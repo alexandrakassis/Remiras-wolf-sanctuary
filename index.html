@@ -43,7 +43,7 @@ img { max-width: 100%; height: auto; }
 .nav-links a:hover::after { width: 100%; }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; }
 .nav-toggle span { width: 25px; height: 3px; background: var(--text-white); border-radius: 3px; transition: var(--transition); }
-.hero { min-height: 100vh; background: linear-gradient(135deg, rgba(26, 58, 42, 0.85) 0%, rgba(45, 90, 61, 0.85) 50%, rgba(30, 61, 41, 0.9) 100%), url('images/hero-wolf.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
+.hero { min-height: 100vh; background: linear-gradient(135deg, rgba(26, 58, 42, 0.5) 0%, rgba(45, 90, 61, 0.5) 50%, rgba(30, 61, 41, 0.6) 100%), url('images/hero-wolf.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.5; }
 .hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 100%); }
 .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 20px; }
@@ -167,6 +167,31 @@ section { padding: 100px 0; }
 @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } .adoption-tiers { grid-template-columns: 1fr; max-width: 400px; } .tier-card.featured { transform: scale(1); } .tier-card.featured:hover { transform: translateY(-10px); } .footer-content { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px) { .nav-links { position: fixed; top: 0; right: -100%; height: 100vh; width: 280px; background: var(--primary-dark); flex-direction: column; justify-content: center; gap: 30px; padding: 40px; transition: var(--transition); } .nav-links.active { right: 0; } .nav-toggle { display: flex; z-index: 1001; } .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); } .nav-toggle.active span:nth-child(2) { opacity: 0; } .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); } .hero h1 { font-size: 2.5rem; } .tagline { font-size: 1.2rem; } .hero-description { font-size: 1rem; } .section-header h2 { font-size: 2rem; } .about-content { grid-template-columns: 1fr; } .about-image { order: -1; } .stats { flex-wrap: wrap; justify-content: center; } .services-grid { grid-template-columns: 1fr; } .wolves-grid { grid-template-columns: 1fr; } .wolf-card { flex-direction: column; } .wolf-image { width: 100%; min-height: 200px; } .visit-content { grid-template-columns: 1fr; } .contact-content { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; text-align: center; } .newsletter-form { flex-direction: column; } }
 @media (max-width: 480px) { .hero h1 { font-size: 2rem; } .hero-buttons { flex-direction: column; } .btn { width: 100%; text-align: center; } section { padding: 60px 0; } .image-placeholder { padding: 50px; } .image-placeholder span { font-size: 4rem; } }
+/* Wolf Pack Helpers */
+.wolf-pack { background: linear-gradient(135deg, #f0f7f4 0%, #e8f5e9 100%); }
+.helpers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 25px; max-width: 900px; margin: 0 auto; }
+.helper-card { background: var(--text-white); padding: 25px 20px; border-radius: var(--border-radius); text-align: center; box-shadow: var(--shadow); transition: var(--transition); }
+.helper-card:hover { transform: translateY(-5px) rotate(2deg); box-shadow: var(--shadow-lg); }
+.helper-emoji { font-size: 3.5rem; margin-bottom: 10px; display: block; }
+.helper-card h4 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 5px; }
+.helper-card p { color: var(--text-light); font-size: 0.85rem; }
+/* Wolf Facts */
+.wolf-facts { background: var(--primary-color); color: var(--text-white); }
+.wolf-facts .section-header h2 { color: var(--text-white); }
+.facts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.fact-card { background: rgba(255,255,255,0.1); padding: 30px; border-radius: var(--border-radius); text-align: center; backdrop-filter: blur(5px); }
+.fact-card:hover { background: rgba(255,255,255,0.2); }
+.fact-emoji { font-size: 3rem; margin-bottom: 15px; display: block; }
+.fact-card h4 { font-size: 1.2rem; margin-bottom: 10px; color: var(--secondary-light); }
+.fact-card p { opacity: 0.95; line-height: 1.6; }
+/* How Kids Can Help */
+.kids-help { background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%); }
+.help-ideas { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; }
+.help-card { background: var(--text-white); padding: 30px; border-radius: var(--border-radius); box-shadow: var(--shadow); display: flex; align-items: flex-start; gap: 20px; transition: var(--transition); }
+.help-card:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
+.help-icon { font-size: 2.5rem; flex-shrink: 0; }
+.help-card h4 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 8px; }
+.help-card p { color: var(--text-light); font-size: 0.95rem; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -181,8 +206,8 @@ section { padding: 100px 0; }
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#wolves">Our Wolves</a></li>
-                <li><a href="#adopt">Adopt</a></li>
-                <li><a href="#visit">Visit</a></li>
+                <li><a href="#pack">Pack Helpers</a></li>
+                <li><a href="#facts">Wolf Facts</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation">
@@ -335,6 +360,147 @@ section { padding: 100px 0; }
                         <p class="wolf-age">4 months old</p>
                         <p class="wolf-story">Our newest arrival! Storm was found during a thunderstorm, hence his name. He's curious and loves to howl.</p>
                         <span class="wolf-status available">Available for Adoption</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wolf Pack Helpers Section -->
+    <section id="pack" class="wolf-pack">
+        <div class="container">
+            <div class="section-header">
+                <h2>Remi's Wolf Pack Helpers</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">Meet the amazing Junior Wolf Rescuers from Remi's class!</p>
+            </div>
+            <div class="helpers-grid">
+                <div class="helper-card">
+                    <span class="helper-emoji">👧</span>
+                    <h4>Remi</h4>
+                    <p>Pack Leader</p>
+                </div>
+                <div class="helper-card">
+                    <span class="helper-emoji">👦</span>
+                    <h4>Your Name</h4>
+                    <p>Wolf Spotter</p>
+                </div>
+                <div class="helper-card">
+                    <span class="helper-emoji">👧</span>
+                    <h4>Your Name</h4>
+                    <p>Treat Giver</p>
+                </div>
+                <div class="helper-card">
+                    <span class="helper-emoji">👦</span>
+                    <h4>Your Name</h4>
+                    <p>Howl Expert</p>
+                </div>
+                <div class="helper-card">
+                    <span class="helper-emoji">👧</span>
+                    <h4>Your Name</h4>
+                    <p>Cuddle Captain</p>
+                </div>
+                <div class="helper-card">
+                    <span class="helper-emoji">👦</span>
+                    <h4>Your Name</h4>
+                    <p>Belly Rubber</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Wolf Facts Section -->
+    <section id="facts" class="wolf-facts">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cool Wolf Facts!</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Did you know these amazing things about wolves?</p>
+            </div>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <span class="fact-emoji">🐺</span>
+                    <h4>Wolves Are Family Animals</h4>
+                    <p>Wolf families are called "packs" and they love each other very much - just like your family!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-emoji">🎵</span>
+                    <h4>Wolves Sing Together</h4>
+                    <p>When wolves howl, they're talking to each other! It's like their own special song.</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-emoji">👃</span>
+                    <h4>Super Sniffers</h4>
+                    <p>Wolves can smell things from really far away - up to 2 miles! That's like smelling cookies from across your whole town!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-emoji">🏃</span>
+                    <h4>Speedy Runners</h4>
+                    <p>Wolves can run super fast - up to 40 miles per hour! That's faster than a car in a parking lot!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-emoji">👶</span>
+                    <h4>Baby Wolves Are Called Pups</h4>
+                    <p>Just like puppies! Wolf pups are born with blue eyes that change color as they grow up.</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-emoji">❤️</span>
+                    <h4>Wolves Are Loyal</h4>
+                    <p>Wolves stay with their families forever and always help take care of each other!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Kids Can Help Section -->
+    <section class="kids-help">
+        <div class="container">
+            <div class="section-header">
+                <h2>How YOU Can Help Wolves!</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">Even kids can be wolf heroes! Here are fun ways to help:</p>
+            </div>
+            <div class="help-ideas">
+                <div class="help-card">
+                    <span class="help-icon">🎨</span>
+                    <div>
+                        <h4>Draw Pictures of Wolves</h4>
+                        <p>Make beautiful wolf artwork and share it with friends to help everyone love wolves!</p>
+                    </div>
+                </div>
+                <div class="help-card">
+                    <span class="help-icon">🧸</span>
+                    <div>
+                        <h4>Stuffed Animal Drive</h4>
+                        <p>Collect stuffed wolf toys for kids who are learning about wolves for the first time!</p>
+                    </div>
+                </div>
+                <div class="help-card">
+                    <span class="help-icon">📚</span>
+                    <div>
+                        <h4>Read Wolf Books</h4>
+                        <p>Learn everything about wolves from books and share cool facts with your class!</p>
+                    </div>
+                </div>
+                <div class="help-card">
+                    <span class="help-icon">🗣️</span>
+                    <div>
+                        <h4>Tell Your Friends</h4>
+                        <p>The more people who know wolves need help, the more heroes we'll have!</p>
+                    </div>
+                </div>
+                <div class="help-card">
+                    <span class="help-icon">🌲</span>
+                    <div>
+                        <h4>Love Nature</h4>
+                        <p>Take care of the Earth! Wolves need forests and clean water just like us.</p>
+                    </div>
+                </div>
+                <div class="help-card">
+                    <span class="help-icon">🎉</span>
+                    <div>
+                        <h4>Throw a Wolf Party</h4>
+                        <p>Have a wolf-themed birthday party and ask for donations to wolf sanctuaries instead of presents!</p>
                     </div>
                 </div>
             </div>
