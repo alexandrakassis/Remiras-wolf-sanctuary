@@ -43,7 +43,7 @@ img { max-width: 100%; height: auto; }
 .nav-links a:hover::after { width: 100%; }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; }
 .nav-toggle span { width: 25px; height: 3px; background: var(--text-white); border-radius: 3px; transition: var(--transition); }
-.hero { min-height: 100vh; background: linear-gradient(135deg, #1a3a2a 0%, #2d5a3d 50%, #1e3d29 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
+.hero { min-height: 100vh; background: linear-gradient(135deg, rgba(26, 58, 42, 0.85) 0%, rgba(45, 90, 61, 0.85) 50%, rgba(30, 61, 41, 0.9) 100%), url('https://images.unsplash.com/photo-1564466809058-bf4114d55352?w=1920&fit=crop&q=80') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.5; }
 .hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 100%); }
 .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 20px; }
@@ -79,6 +79,11 @@ section { padding: 100px 0; }
 .image-placeholder { background: linear-gradient(135deg, var(--primary-light), var(--primary-color)); border-radius: var(--border-radius); padding: 80px; text-align: center; color: var(--text-white); box-shadow: var(--shadow-lg); }
 .image-placeholder span { font-size: 6rem; display: block; margin-bottom: 20px; }
 .image-placeholder p { font-size: 1.2rem; opacity: 0.9; }
+.founder-image { border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+.founder-image img { width: 100%; height: 500px; object-fit: cover; display: block; }
+.founder-caption { background: var(--primary-color); color: var(--text-white); padding: 20px; text-align: center; }
+.founder-caption h4 { font-size: 1.3rem; margin-bottom: 5px; }
+.founder-caption p { font-size: 0.95rem; opacity: 0.9; }
 .services { background: var(--bg-cream); }
 .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
 .service-card { background: var(--text-white); padding: 40px 30px; border-radius: var(--border-radius); text-align: center; box-shadow: var(--shadow); transition: var(--transition); }
@@ -90,8 +95,9 @@ section { padding: 100px 0; }
 .wolves-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
 .wolf-card { background: var(--text-white); border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow); display: flex; transition: var(--transition); }
 .wolf-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-.wolf-image { width: 200px; min-height: 250px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.wolf-image { width: 200px; min-height: 250px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
 .wolf-image span { font-size: 5rem; }
+.wolf-image img { width: 100%; height: 100%; object-fit: cover; }
 .wolf-info { padding: 30px; display: flex; flex-direction: column; }
 .wolf-info h3 { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 5px; }
 .wolf-age { color: var(--secondary-color); font-weight: 600; margin-bottom: 15px; }
@@ -214,9 +220,10 @@ section { padding: 100px 0; }
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Remira's Wolf Sanctuary is a non-profit organization dedicated to providing lifelong care for orphaned, injured, and displaced wolf pups. Founded by wildlife biologist Dr. Remira Thornwood, our sanctuary has become a beacon of hope for wolves in need.</p>
-                    <p>We believe every wolf deserves a chance at life. Our team of dedicated caretakers, veterinarians, and volunteers work tirelessly to ensure each wolf receives the specialized care they need to thrive.</p>
+                    <h3>Meet Our Founder: Remi</h3>
+                    <p>Remira's Wolf Sanctuary was founded by 4-year-old Remi, a passionate young conservationist with a heart as big as a wolf pack's territory. After learning about the plight of wolves being targeted by Irish poachers, Remi knew she had to take action.</p>
+                    <p>Despite her young age, Remi has an extraordinary gift for connecting with baby wolves. She believes every wolf pup deserves love, safety, and a chance to grow up wild and free. Her mission is simple: rescue wolves, build friendships with them, and give them the happy life they deserve.</p>
+                    <p>"Wolves are my best friends," says Remi. "I want to save all of them!"</p>
                     <div class="stats">
                         <div class="stat">
                             <span class="stat-number">150+</span>
@@ -233,9 +240,12 @@ section { padding: 100px 0; }
                     </div>
                 </div>
                 <div class="about-image">
-                    <div class="image-placeholder">
-                        <span>🐺</span>
-                        <p>Baby Wolf Care</p>
+                    <div class="founder-image">
+                        <img src="remi.jpg" alt="Remi, founder of Remira's Wolf Sanctuary">
+                        <div class="founder-caption">
+                            <h4>Remi</h4>
+                            <p>Founder & Chief Wolf Friend, Age 4</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -285,7 +295,7 @@ section { padding: 100px 0; }
             <div class="wolves-grid">
                 <div class="wolf-card">
                     <div class="wolf-image">
-                        <span>🐺</span>
+                        <img src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?w=400&fit=crop&q=80" alt="Luna the wolf pup">
                     </div>
                     <div class="wolf-info">
                         <h3>Luna</h3>
@@ -296,7 +306,7 @@ section { padding: 100px 0; }
                 </div>
                 <div class="wolf-card">
                     <div class="wolf-image">
-                        <span>🐺</span>
+                        <img src="https://images.unsplash.com/photo-1564466809058-bf4114d55352?w=400&fit=crop&q=80" alt="Shadow the wolf pup">
                     </div>
                     <div class="wolf-info">
                         <h3>Shadow</h3>
@@ -307,7 +317,7 @@ section { padding: 100px 0; }
                 </div>
                 <div class="wolf-card">
                     <div class="wolf-image">
-                        <span>🐺</span>
+                        <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=400&fit=crop&q=80" alt="Aurora the wolf">
                     </div>
                     <div class="wolf-info">
                         <h3>Aurora</h3>
@@ -318,7 +328,7 @@ section { padding: 100px 0; }
                 </div>
                 <div class="wolf-card">
                     <div class="wolf-image">
-                        <span>🐺</span>
+                        <img src="https://images.unsplash.com/photo-1474511320723-9a56873571b7?w=400&fit=crop&q=80" alt="Storm the wolf pup">
                     </div>
                     <div class="wolf-info">
                         <h3>Storm</h3>
